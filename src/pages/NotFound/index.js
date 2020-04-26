@@ -2,6 +2,6 @@ import React from 'react';
 
 // import { Container } from './styles';
 
-export default function Profile() {
-    return <h1>Profile</h1>;
+export default function NotFound() {
+    return <h1>404 Not Found</h1>;
 }
