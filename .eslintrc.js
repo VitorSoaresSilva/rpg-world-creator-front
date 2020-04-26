@@ -35,4 +35,11 @@ module.exports = {
       "no-console": ["error", { allow: ["tron"] }],
       "react/jsx-one-expression-per-line": "off",
   },
+  settings: {
+    "import/resolver": {
+      "babel-plugin-root-import": {
+        rootPathSuffix: "src"
+      },
+    },
+  },
 };
