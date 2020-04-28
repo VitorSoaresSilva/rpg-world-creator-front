@@ -6,20 +6,26 @@ import PropTypes from 'prop-types';
 import AuthLayout from '~/pages/_layouts/auth';
 import DefaultLayout from '~/pages/_layouts/default';
 
+import { isAuthenticated } from '~/services/auth';
+
 export default function RouteWrapper({
     component: Component,
     isPrivate,
     ...rest
 }) {
-    const signed = false;
-    if (!signed && isPrivate) {
-        return <Redirect to="/" />;
+    let Layout;
+    const signed = isAuthenticated();
+    if (signed) {
+        if (!isPrivate) {
+            return <Redirect to="/dashboard" />;
+        }
+        Layout = DefaultLayout;
+    } else {
+        if (isPrivate) {
+            return <Redirect to="/" />;
+        }
+        Layout = AuthLayout;
     }
-    if (signed && !isPrivate) {
-        return <Redirect to="/dashboard" />;
-    }
-
-    const Layout = signed ? AuthLayout : DefaultLayout;
     return (
         <Route
             {...rest}
