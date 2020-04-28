@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Wrapper } from './styles';
-import { Wrapper, Content } from './styles';
+import Menu from '~/components/Header';
 
 export default function DefaultLayout({ children }) {
     return (
         <Wrapper>
-            <Content>{children}</Content>
+            <Menu />
             {children}
         </Wrapper>
     );
