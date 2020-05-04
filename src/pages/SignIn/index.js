@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
-import { Form, Input } from '@rocketseat/unform';
+import { Form } from '@unform/web';
 import * as Yup from 'yup';
+import Input from '~/components/Input';
 import Logo from '~/assets/logo.png';
 import api from '~/services/api';
 
