@@ -1,7 +1,15 @@
 import React from 'react';
-
-// import { Container } from './styles';
+import { Link } from 'react-router-dom';
+import { Container, Card } from './styles';
 
 export default function Dashboard() {
-    return <h1>Dashboard</h1>;
+    return (
+        <Container>
+            <Card>
+                <h1>Characters</h1>
+                <p>Create and update Craracters</p>
+                <Link to="/characters">Info</Link>
+            </Card>
+        </Container>
+    );
 }
